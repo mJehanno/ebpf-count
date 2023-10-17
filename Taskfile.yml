@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  compile:
+    cmds:
+      - clang -O2 -target bpf -I /sys/kernel/btf/vmlinux.h -c bpf/count.c -o count.o
+  run:
+    cmds:
+      - sudo go run .
